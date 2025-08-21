@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Bank Accounts vs. Mobile Wallet Adoption</title>
+    <style>
+        body {
+            font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 40px 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            font-size: 14px;
+            color: #928f8b;
+            font-style: italic;
+            margin-bottom: 4px;
+        }
+        
+        .data-source {
+            font-size: 11px;
+            color: #666;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 450px;
+            margin: 40px 60px 80px 80px;
+            border-left: 3px solid #928f8b;
+            border-bottom: 3px solid #928f8b;
+        }
+        
+        .y-axis {
+            position: absolute;
+            left: -70px;
+            top: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0;
+        }
+        
+        .y-label {
+            font-size: 14px;
+            color: #333;
+            font-weight: 700;
+            text-align: right;
+            padding-right: 15px;
+        }
+        
+        .x-axis {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding: 0 40px;
+        }
+        
+        .x-label {
+            font-size: 14px;
+            color: #333;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .grid-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .grid-line-horizontal {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #f0f0f0;
+        }
+        
+        .country-group {
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            gap: 8px;
+            align-items: flex-end;
+            width: 100px;
+        }
+        
+        .bar {
+            width: 40px;
+            border-radius: 6px 6px 0 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            padding-bottom: 8px;
+            position: relative;
+        }
+        
+        .bank-bar {
+            background: linear-gradient(135deg, #007074 0%, #2d5a87 100%);
+        }
+        
+        .mobile-bar {
+            background: linear-gradient(135deg, #ebb324 0%, #d4a017 100%);
+        }
+        
+        .axis-title {
+            position: absolute;
+            font-size: 16px;
+            font-weight: 700;
+            color: #928f8b;
+        }
+        
+        .y-axis-title {
+            left: -50px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-90deg);
+        }
+        
+        .x-axis-title {
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 15px;
+            border-radius: 3px;
+        }
+        
+        .legend-text {
+            font-size: 15px;
+            font-weight: 700;
+            color: #928f8b;
+        }
+        
+        .bank-legend {
+            background: linear-gradient(135deg, #007074 0%, #2d5a87 100%);
+        }
+        
+        .mobile-legend {
+            background: linear-gradient(135deg, #ebb324 0%, #d4a017 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">Bank Accounts vs. Mobile Wallet Adoption</div>
+            <div class="subtitle">Financial Inclusion Comparison Across North & West Africa</div>
+            <div class="data-source">Sources: World Bank, Central Banks, Fintech Reports</div>
+        </div>
+        
+        <div class="chart-container">
+            <div class="axis-title y-axis-title">Adoption Rate (%)</div>
+            <div class="axis-title x-axis-title">Country</div>
+            
+            <div class="y-axis">
+                <div class="y-label">80%</div>
+                <div class="y-label">70%</div>
+                <div class="y-label">60%</div>
+                <div class="y-label">50%</div>
+                <div class="y-label">40%</div>
+                <div class="y-label">30%</div>
+                <div class="y-label">20%</div>
+                <div class="y-label">10%</div>
+                <div class="y-label">0%</div>
+            </div>
+            
+            <div class="x-axis">
+                <div class="x-label">Algeria</div>
+                <div class="x-label">Nigeria</div>
+                <div class="x-label">Kenya</div>
+                <div class="x-label">Morocco</div>
+            </div>
+            
+            <div class="grid-lines">
+                <div class="grid-line-horizontal" style="top: 0%;"></div>
+                <div class="grid-line-horizontal" style="top: 12.5%;"></div>
+                <div class="grid-line-horizontal" style="top: 25%;"></div>
+                <div class="grid-line-horizontal" style="top: 37.5%;"></div>
+                <div class="grid-line-horizontal" style="top: 50%;"></div>
+                <div class="grid-line-horizontal" style="top: 62.5%;"></div>
+                <div class="grid-line-horizontal" style="top: 75%;"></div>
+                <div class="grid-line-horizontal" style="top: 87.5%;"></div>
+                <div class="grid-line-horizontal" style="top: 100%;"></div>
+            </div>
+            
+            <!-- Algeria: Bank 55%, Mobile 5% -->
+            <div class="country-group" style="left: 8%;">
+                <div class="bar bank-bar" style="height: 309.375px;">55%</div>
+                <div class="bar mobile-bar" style="height: 28.125px;">5%</div>
+            </div>
+            
+            <!-- Nigeria: Bank 45%, Mobile 45% -->
+            <div class="country-group" style="left: 32%;">
+                <div class="bar bank-bar" style="height: 253.125px;">45%</div>
+                <div class="bar mobile-bar" style="height: 253.125px;">45%</div>
+            </div>
+            
+            <!-- Kenya: Bank 60%, Mobile 79% -->
+            <div class="country-group" style="left: 56%;">
+                <div class="bar bank-bar" style="height: 337.5px;">60%</div>
+                <div class="bar mobile-bar" style="height: 444.375px;">79%</div>
+            </div>
+            
+            <!-- Morocco: Bank 50%, Mobile 20% -->
+            <div class="country-group" style="left: 80%;">
+                <div class="bar bank-bar" style="height: 281.25px;">50%</div>
+                <div class="bar mobile-bar" style="height: 112.5px;">20%</div>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color bank-legend"></div>
+                <div class="legend-text">Bank Account Penetration</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color mobile-legend"></div>
+                <div class="legend-text">Mobile Wallet Adoption</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
